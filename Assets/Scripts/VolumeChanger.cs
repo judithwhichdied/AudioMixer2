@@ -5,8 +5,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class VolumeChanger : MonoBehaviour
 {
-    [SerializeField] AudioMixerGroup _mixer;
-    [SerializeField] PauseMenu _volumeMute;
+    [SerializeField] private AudioMixerGroup _mixer;
+    [SerializeField] private PauseMenu _volumeMute;
 
     private Slider _slider;
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Image))]
 public class IconSwitcher : MonoBehaviour
 {
     [SerializeField] private Sprite _iconOn;
