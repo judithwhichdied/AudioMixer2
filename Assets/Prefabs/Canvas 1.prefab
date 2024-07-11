@@ -742,6 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mixer: {fileID: 3080291875288008110, guid: 02d0ace0e3c7b6d4882d0ab1059608e6, type: 2}
+  _volumeMute: {fileID: 1841435143260600502}
 --- !u!1 &2754952611188279844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,6 +1344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mixer: {fileID: 24300002, guid: 02d0ace0e3c7b6d4882d0ab1059608e6, type: 2}
+  _volumeMute: {fileID: 1841435143260600502}
 --- !u!1 &4488731689369223301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,6 +2978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mixer: {fileID: -8016933865045574764, guid: 02d0ace0e3c7b6d4882d0ab1059608e6, type: 2}
+  _volumeMute: {fileID: 1841435143260600502}
 --- !u!1 &8100375595496558581
 GameObject:
   m_ObjectHideFlags: 0

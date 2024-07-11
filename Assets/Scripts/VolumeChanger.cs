@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class VolumeChanger : MonoBehaviour
 {
     [SerializeField] AudioMixerGroup _mixer;
+    [SerializeField] PauseMenu _volumeMute;
 
     private Slider _slider;
 
@@ -16,8 +17,11 @@ public class VolumeChanger : MonoBehaviour
 
     public void ChangeVolume(string volumeName)
     {
-        float volumeLevel = _slider.value;
+        if (_volumeMute.Enabled == false)
+        {
+            float volumeLevel = _slider.value;
 
-        _mixer.audioMixer.SetFloat(volumeName, Mathf.Log10(volumeLevel) * 20);
+            _mixer.audioMixer.SetFloat(volumeName, Mathf.Log10(volumeLevel) * 20);
+        }
     }
 }

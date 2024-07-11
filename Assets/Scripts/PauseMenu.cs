@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] private AudioMixerGroup _mixer;
 
-    private bool _enabled = false;
+    public bool Enabled { get; private set; } = false;
 
     private void OnEnable()
     {
@@ -21,15 +21,15 @@ public class PauseMenu : MonoBehaviour
 
     public void ToggleMusic()
     {
-        if (_enabled)
+        if (Enabled)
         {
             _mixer.audioMixer.SetFloat(MasterVolume, 0);
-            _enabled = false;
+            Enabled = false;
         }
         else
         {
             _mixer.audioMixer.SetFloat(MasterVolume, -80);
-            _enabled = true;
+            Enabled = true;
         }
     }
 }
