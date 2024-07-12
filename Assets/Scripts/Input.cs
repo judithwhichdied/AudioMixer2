@@ -12,16 +12,18 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(_requiredKey) && _enabled == false)
+        if (Input.GetKeyDown(_requiredKey))
         {
-            _pauseMenu = Instantiate(_pauseMenuPrefab);
-            _enabled = true;
-        }
-        else if (Input.GetKeyDown(_requiredKey) && _enabled == true)
-        {
-            Destroy(_pauseMenu.gameObject);
-            _enabled = false;
-        }
-                           
+            if (_enabled == false)
+            {
+                _pauseMenu = Instantiate(_pauseMenuPrefab);
+                _enabled = true;
+            }
+            else
+            {
+                Destroy(_pauseMenu.gameObject);
+                _enabled = false;
+            }
+        }                         
     }
 }

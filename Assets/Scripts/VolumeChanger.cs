@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -6,13 +7,31 @@ using UnityEngine.UI;
 public class VolumeChanger : MonoBehaviour
 {
     [SerializeField] private AudioMixerGroup _mixer;
-    [SerializeField] private PauseMenu _volumeMute;
+    [SerializeField] private VolumeSwitcher _volumeMute;
+    [SerializeField] private string _volumeName;
 
     private Slider _slider;
+
+    public event Action<string> VolumeChanged;
 
     private void Awake()
     {
         _slider = GetComponent<Slider>();
+    }
+
+    private void Update()
+    {
+        VolumeChanged?.Invoke(_volumeName);
+    }
+
+    private void OnEnable()
+    {
+        VolumeChanged += ChangeVolume;
+    }
+
+    private void OnDisable()
+    {
+        VolumeChanged -= ChangeVolume;
     }
 
     public void ChangeVolume(string volumeName)

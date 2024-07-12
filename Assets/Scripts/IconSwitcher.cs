@@ -6,23 +6,34 @@ public class IconSwitcher : MonoBehaviour
 {
     [SerializeField] private Sprite _iconOn;
     [SerializeField] private Sprite _iconOff;
+    [SerializeField] private Button _button;
 
-    private Image _button;
+    private Image _buttonImage;
 
     private void Awake()
     {
-        _button = GetComponent<Image>();
+        _buttonImage = GetComponent<Image>();
+    }
+
+    private void OnEnable()
+    {
+        _button.onClick.AddListener(Switch);
+    }
+
+    private void OnDisable()
+    {
+        _button.onClick.RemoveListener(Switch);
     }
 
     public void Switch()
     {
-        if (_button.sprite == _iconOn)
+        if (_buttonImage.sprite == _iconOn)
         {
-            _button.sprite = _iconOff;
+            _buttonImage.sprite = _iconOff;
         }
         else
         {
-            _button.sprite = _iconOn;
+            _buttonImage.sprite = _iconOn;
         }
     }
 }
